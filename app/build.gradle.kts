@@ -2,11 +2,12 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     id("com.google.devtools.ksp")
+
 }
 
 android {
     namespace = "com.example.roomconfigured"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.roomconfigured"
@@ -63,15 +64,7 @@ dependencies {
 
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    implementation(libs.navigation.runtime.ktx)
     ksp(libs.androidx.room.compiler)
-
-    val nav_version = "2.5.3"
-    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
-    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
-    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
-    implementation("androidx.navigation:navigation-compose:$nav_version")
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -80,4 +73,11 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    val nav_version = "2.5.3"
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-dynamic-features-fragment:$nav_version")
+    androidTestImplementation("androidx.navigation:navigation-testing:$nav_version")
+    implementation("androidx.navigation:navigation-compose:$nav_version")
 }

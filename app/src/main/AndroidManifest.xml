@@ -13,11 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Discord"
         tools:targetApi="31"
-        android:name=".Data.MyApplication">
+        android:name="com.example.discord.Data.MyApplication">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.discord.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.Discord">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

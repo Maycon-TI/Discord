@@ -25,7 +25,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.discord.Data.Entities.User
+import com.example.discord.Data.Entities.UserEntity
 import com.example.discord.Data.MyApplication
 
 @Composable
@@ -90,7 +90,7 @@ private fun InformationView(navController: NavController) {
                 shape = RoundedCornerShape(5.dp),
                 modifier = Modifier.fillMaxWidth(),
                 onClick = {
-                    val newUser = User(
+                    val newUser = UserEntity(
                         email = email.value,
                         displayName = displayName.value,
                         username = username.value,
@@ -110,14 +110,14 @@ private fun InformationView(navController: NavController) {
     }
 }
 
-private fun createAccount(navController: NavController, user: User) {
+private fun createAccount(navController: NavController, user: UserEntity) {
     user.email = "Rojerio@gmail.com"
     user.displayName = "Pablo Marsal"
     user.username = "Rojerio"
     user.password = "123"
 
     MyApplication.database?.userDao()?.insertUser(
-        User(
+        UserEntity(
             email = user.email,
             displayName = user.displayName,
             username = user.username,
