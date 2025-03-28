@@ -22,6 +22,8 @@ class MainActivity : ComponentActivity() {
 
         println()
 
+        val user1 = UserEntity("teste@gmail.com", "", "", "")
+
         enableEdgeToEdge()
         setContent {
             DiscordTheme {
