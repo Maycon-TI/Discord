@@ -26,6 +26,8 @@ class MainActivity : ComponentActivity() {
 
         val number1 = 1
 
+        val number3 = 3
+
         enableEdgeToEdge()
         setContent {
             DiscordTheme {
