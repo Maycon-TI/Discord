@@ -20,6 +20,7 @@ class MainActivity : ComponentActivity() {
         val userEntity = UserEntity("Douglas", "1", "2", "3")
         MyApplication.database?.userDao()?.insertUser(userEntity)
 
+        println()
 
         enableEdgeToEdge()
         setContent {
