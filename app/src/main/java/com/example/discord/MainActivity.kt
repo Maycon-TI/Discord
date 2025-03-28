@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
 
         println()
 
-        val user1 = UserEntity("teste@gmail.com", "", "", "")
+        val number = 0
 
         enableEdgeToEdge()
         setContent {
