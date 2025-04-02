@@ -90,19 +90,28 @@ private fun InformationView(navController: NavController) {
                 shape = RoundedCornerShape(5.dp),
                 modifier = Modifier.fillMaxWidth(),
                 onClick = {
-                    val newUser = UserEntity(
-                        email = email.value,
-                        displayName = displayName.value,
-                        username = username.value,
-                        password = password.value
-                    )
-                    createAccount(navController, newUser)
+
+                    if (email.value.isEmpty() || username.value.isEmpty() || password.value.isEmpty()) {
+                        emailIsError.value = email.value.isEmpty()
+
+                        usernameIsError.value = username.value.isEmpty()
+
+                        passwordIsError.value = password.value.isEmpty()
+
+                    } else {
+                        val newUser = UserEntity(
+                            email = email.value,
+                            displayName = displayName.value,
+                            username = username.value,
+                            password = password.value
+                        )
+                        createAccount(navController, newUser)
+                    }
+
                 }
             ) { Text("Continue") }
             Text(
-                modifier = Modifier.clickable {
-                    navController.popBackStack()
-                },
+                modifier = Modifier.clickable { navController.popBackStack() },
                 text = "Already have an account?",
                 color = MaterialTheme.colorScheme.primary
             )
@@ -111,11 +120,6 @@ private fun InformationView(navController: NavController) {
 }
 
 private fun createAccount(navController: NavController, user: UserEntity) {
-    user.email = "Rojerio@gmail.com"
-    user.displayName = "Pablo Marsal"
-    user.username = "Rojerio"
-    user.password = "123"
-
     MyApplication.database?.userDao()?.insertUser(
         UserEntity(
             email = user.email,
@@ -124,7 +128,6 @@ private fun createAccount(navController: NavController, user: UserEntity) {
             password = user.password
         )
     )
-
     navController.popBackStack()
 }
 

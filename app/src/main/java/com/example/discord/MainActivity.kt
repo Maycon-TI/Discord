@@ -17,17 +17,6 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val userEntity = UserEntity("Douglas", "1", "2", "3")
-        MyApplication.database?.userDao()?.insertUser(userEntity)
-
-        println()
-
-        val number = 0
-
-        val number1 = 1
-
-        val number3 = 3
-
         enableEdgeToEdge()
         setContent {
             DiscordTheme {

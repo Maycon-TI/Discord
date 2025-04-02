@@ -26,12 +26,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.discord.Data.MyApplication
 import com.example.discord.Screen
 
 @Composable
 fun LogInView (
     navController: NavController
 ) {
+    MyApplication.database?.userDao()?.deleteUserById(1)
     Scaffold { innerPadding ->
         Box(
             modifier = Modifier.fillMaxSize(),
@@ -118,6 +120,7 @@ private fun InformationView(navController: NavController) {
                         } else {
                             emailIsError.value = false
                             passwordIsError.value = false
+
                         }
                     }
 
