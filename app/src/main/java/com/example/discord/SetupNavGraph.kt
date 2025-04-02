@@ -5,8 +5,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 
-import com.example.discord.Login.LogInView
-import com.example.discord.Register.RegisterView
+import com.example.discord.login.LogInView
+import com.example.discord.register.RegisterView
 
 @Composable
 fun SetupNavGraph(navController: NavHostController) {

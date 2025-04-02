@@ -1,4 +1,4 @@
-package com.example.discord.Login
+package com.example.discord.login
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -26,7 +26,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.discord.Data.MyApplication
+import com.example.discord.data.MyApplication
 import com.example.discord.Screen
 
 @Composable

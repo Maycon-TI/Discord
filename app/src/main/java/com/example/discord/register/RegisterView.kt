@@ -1,4 +1,4 @@
-package com.example.discord.Register
+package com.example.discord.register
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -25,8 +25,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import com.example.discord.Data.Entities.UserEntity
-import com.example.discord.Data.MyApplication
+import com.example.discord.data.entities.User
+import com.example.discord.data.MyApplication
 
 @Composable
 fun RegisterView(
@@ -99,7 +99,7 @@ private fun InformationView(navController: NavController) {
                         passwordIsError.value = password.value.isEmpty()
 
                     } else {
-                        val newUser = UserEntity(
+                        val newUser = User(
                             email = email.value,
                             displayName = displayName.value,
                             username = username.value,
@@ -119,9 +119,9 @@ private fun InformationView(navController: NavController) {
     }
 }
 
-private fun createAccount(navController: NavController, user: UserEntity) {
+private fun createAccount(navController: NavController, user: User) {
     MyApplication.database?.userDao()?.insertUser(
-        UserEntity(
+        User(
             email = user.email,
             displayName = user.displayName,
             username = user.username,

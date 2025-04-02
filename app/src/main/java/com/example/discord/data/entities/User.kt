@@ -1,10 +1,10 @@
-package com.example.discord.Data.Entities
+package com.example.discord.data.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class UserEntity(
+data class User(
     var email: String,
     var displayName: String,
     var username: String,

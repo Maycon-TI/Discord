@@ -1,10 +1,7 @@
-package com.example.discord.Data
+package com.example.discord.data
 
 import android.app.Application
-import android.util.Log
 import androidx.room.Room
-import androidx.room.RoomDatabase
-import androidx.sqlite.db.SupportSQLiteDatabase
 
 open class MyApplication: Application() {
 
