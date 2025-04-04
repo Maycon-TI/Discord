@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.discord.data.MyApplication
 import com.example.discord.Screen
+import com.example.discord.data.entities.User
 
 @Composable
 fun LogInView (
@@ -121,9 +122,10 @@ private fun InformationView(navController: NavController) {
                             emailIsError.value = false
                             passwordIsError.value = false
 
+                            LogInUser(email.value, password.value, navController)
+
                         }
                     }
-
                 }
             ) { Text("Log In") }
             Row {
@@ -132,6 +134,18 @@ private fun InformationView(navController: NavController) {
             }
         }
     }
+}
+
+private fun LogInUser(email: String, password: String, navController: NavController) {
+    var user: User? = MyApplication.database?.userDao()?.findUserByEmail(email, password)
+
+    if (user != null) {
+        if (
+            email == user.email &&
+            password == user.password
+            ) { navController.navigate(route = "${Screen.menuView.route}/${user.id}") }
+    }
+
 }
 
 @Composable

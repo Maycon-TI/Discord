@@ -7,6 +7,5 @@ import com.example.discord.data.entities.User
 
 @Database(version = 1, entities = [User::class])
 abstract class AppDatabase: RoomDatabase() {
-
     abstract fun userDao(): IUserDao
 }

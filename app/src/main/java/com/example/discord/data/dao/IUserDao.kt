@@ -12,7 +12,10 @@ interface IUserDao {
     fun insertUser(user: User)
 
     @Query("SELECT * FROM User WHERE email = :email AND password = :password")
-    fun findUserByEmail(email: String, password: String): User?
+    fun findUserByEmail(email: String, password: String): User
+
+    @Query("SELECT * FROM User WHERE id = :id")
+    fun findUserById(id: Int): User
 
     @Query("DELETE FROM User WHERE id = :userId")
     fun deleteUserById(userId: Int)

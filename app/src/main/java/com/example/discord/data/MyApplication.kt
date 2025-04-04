@@ -15,6 +15,7 @@ open class MyApplication: Application() {
         super.onCreate()
         database = Room.databaseBuilder(applicationContext,
             AppDatabase::class.java, "my-db")
+            .fallbackToDestructiveMigration()
             .allowMainThreadQueries()
             .build()
     }
